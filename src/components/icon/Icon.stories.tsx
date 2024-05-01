@@ -20,7 +20,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Defaul: Story = {
+export const Default: Story = {
   args: {
     // The args you need here will depend on your component
     icon: "home",
