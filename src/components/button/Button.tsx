@@ -54,7 +54,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       type={type}
-      className={`${color} ${variant} ${size} ${className}`}
+      className={`${color} ${variant} ${size} ${disabled ? "disabled" : ""} ${className}`}
       style={style}
       {...props}
     >
