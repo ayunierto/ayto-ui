@@ -6,7 +6,7 @@ type Props = {
   /**
    * Size of the icon
    */
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
   /**
    * Custom styles for the icon
    */
