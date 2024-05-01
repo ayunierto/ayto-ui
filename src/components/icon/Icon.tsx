@@ -4,6 +4,10 @@ type Props = {
    */
   className?: string;
   /**
+   * Size of the icon
+   */
+  size: "small" | "medium" | "large";
+  /**
    * Custom styles for the icon
    */
   style?: React.CSSProperties;
@@ -3305,9 +3309,12 @@ type Props = {
     | "nest_gale_wifi";
 };
 
-const Icon = ({ className, style, icon }: Props) => {
+const Icon = ({ className, style, icon, size = "medium" }: Props) => {
   return (
-    <span className={`material-icons-outlined ${className}`} style={style}>
+    <span
+      className={`material-icons-outlined ${size} ${className}`}
+      style={style}
+    >
       {icon}
     </span>
   );

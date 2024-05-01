@@ -107,6 +107,16 @@ button.bordered {
   color: #f3f3f3;
 }
 
+.material-icons-outlined.small {
+  font-size: 14px;
+}
+.material-icons-outlined.medium {
+  font-size: 20px;
+}
+.material-icons-outlined.large {
+  font-size: 30px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #212121;
