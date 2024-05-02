@@ -8,8 +8,9 @@
   font-family: var(--fontFamilyBase);
 
   color-scheme: light dark;
-  color: #f3f3f3;
-  background-color: #212121;
+
+  background-color: #202020;
+  color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -168,7 +169,27 @@ button.disabled:hover {
   border: 1px solid #1d1d1d;
   border-radius: 4px;
   transition: all 0.3s ease;
-  background-color: #292929;
+  background-color: #2b2b2b;
+}
+
+input {
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-bottom: 2px solid #9f9f9f;
+  background-color: #3d3d3d;
+  font-size: 14px;
+}
+
+input:focus {
+  background-color: #222222;
+  border-bottom: 2px solid #76b9ed;
+  outline: none;
+}
+
+input::placeholder {
+  color: #d3d3d3;
 }
 
 @media (prefers-color-scheme: light) {
