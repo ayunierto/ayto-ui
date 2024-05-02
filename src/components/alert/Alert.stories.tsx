@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Alert from "./Alert";
 import Icon from "../icon/Icon";
+import Button from "../button/Button";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Alert> = {
@@ -52,5 +53,17 @@ export const Variants: Story = {
         <Icon icon="info" /> This is an alert with colors
       </Alert>
     </div>
+  ),
+};
+
+export const WithButton: Story = {
+  args: {
+    children: "This is an alert",
+  },
+  render: (args) => (
+    <Alert {...args} variant="success">
+      <Icon icon="info" /> This is an alert with colors{" "}
+      <Button>Click me</Button>
+    </Alert>
   ),
 };

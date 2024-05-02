@@ -5,6 +5,7 @@
   gap: 10px;
   font-size: 14px;
   width: max-content;
+  user-select: none;
 }
 
 .alert.primary {

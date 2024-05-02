@@ -55,20 +55,20 @@ button {
 }
 
 button.small {
-  font-size: 12px;
-  padding: 4px 8px;
+  font-size: 14px;
+  padding: 6px 12px;
   min-height: auto;
-  font-weight: 400;
+  font-weight: 300;
 }
 button.medium {
   font-size: 14px;
-  padding: 5px 12px;
+  padding: 8px 16px;
   min-height: auto;
   font-weight: 600;
 }
 button.large {
   font-size: 16px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   min-height: auto;
   font-weight: 800;
 }
