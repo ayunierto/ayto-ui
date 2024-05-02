@@ -17,3 +17,10 @@ export const Default: Story = {
     children: "Card Example",
   },
 };
+
+export const WithShadow: Story = {
+  args: {
+    children: "Card Example",
+    shadow: true,
+  },
+};
