@@ -13,7 +13,7 @@
 }
 
 .alert.alert.primary span {
-  color: #5fb2f2;
+  color: #388ac9;
 }
 
 .alert.success {
@@ -25,14 +25,14 @@
 }
 
 .alert.warning {
-  background-color: #8f5d00;
+  background-color: #584217;
 }
 .alert.alert.warning span {
   color: #ffa600;
 }
 
 .alert.error {
-  background-color: #630000;
+  background-color: #611f1f;
 }
 .alert.alert.error span {
   color: #e20000;
