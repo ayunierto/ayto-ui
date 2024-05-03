@@ -24,3 +24,29 @@ export const WithShadow: Story = {
     shadow: true,
   },
 };
+
+export const Sizes: Story = {
+  args: {
+    children: "Card Example",
+  },
+  render: (args) => (
+    <div
+      style={{
+        display: "flex",
+        gap: "10px",
+        flexDirection: "column",
+      }}
+    >
+      <Card {...args} size="small"></Card>
+      <Card {...args} size="medium"></Card>
+      <Card {...args} size="large"></Card>
+    </div>
+  ),
+};
+
+export const Heverable: Story = {
+  args: {
+    children: "Card Example",
+    hoverable: true,
+  },
+};

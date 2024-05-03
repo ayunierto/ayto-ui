@@ -1,3 +1,5 @@
+import "./Button.css";
+
 type Props = {
   /**
    * Children to be rendered inside the button

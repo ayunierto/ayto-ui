@@ -1,0 +1,31 @@
+.menu {
+  position: relative;
+}
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  position: absolute;
+  border: 1px solid #1d1d1d;
+  border-radius: 4px;
+  padding: 6px;
+  gap: 4px;
+  background-color: #212121;
+  margin-top: 4px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadown);
+  transform-origin: top;
+}
+.menu__list.open {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleY(1);
+}
+.menu__list.closed {
+  visibility: hidden;
+  opacity: 0;
+  transform: scaleY(0);
+}
+.menu__list__item {
+  justify-content: start;
+}

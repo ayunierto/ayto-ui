@@ -1,3 +1,5 @@
+import "./Icon.css";
+
 type Props = {
   /**
    * Custom class name for the icon

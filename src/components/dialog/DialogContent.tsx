@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DialogContext } from "./Dialog";
+import Card from "../card/Card";
 
 type Props = {
   children?: React.ReactNode;
@@ -14,9 +15,12 @@ const DialogContent = ({ children, className, style }: Props) => {
       className={`dialog ${isOpen ? "open" : "closed"} ${className}`}
       style={style}
     >
-      <div className={`card dialog__content ${isOpen ? "open" : "closed"}`}>
+      <Card
+        size="large"
+        className={`dialog__content ${isOpen ? "open" : "closed"}`}
+      >
         {children}
-      </div>
+      </Card>
     </div>
   );
 };

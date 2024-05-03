@@ -1,3 +1,5 @@
+import "./Input.css";
+
 type Props = {
   children?: React.ReactNode;
   className?: string;

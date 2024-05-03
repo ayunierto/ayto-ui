@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 
+import "./Menu.css";
+
 type Props = {
   children: (args: MenuContextProps) => JSX.Element;
   className?: string;
