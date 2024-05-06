@@ -6,6 +6,20 @@ import Card from "./Card";
 const meta: Meta<typeof Card> = {
   tags: ["autodocs"],
   component: Card,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+    },
+    size: {
+      control: { type: "inline-radio" },
+    },
+    shadow: {
+      control: { type: "boolean" },
+    },
+    hoverable: {
+      control: { type: "boolean" },
+    },
+  },
 };
 
 export default meta;
@@ -44,7 +58,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Heverable: Story = {
+export const Hoverable: Story = {
   args: {
     children: "Card Example",
     hoverable: true,
