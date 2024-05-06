@@ -6,6 +6,7 @@
   font-size: 14px;
   width: max-content;
   user-select: none;
+  border: none;
 }
 
 .alert.primary {
@@ -17,7 +18,7 @@
 }
 
 .alert.success {
-  background-color: #393d1b;
+  background-color: #464b1e8f;
 }
 
 .alert.alert.success span {
@@ -25,15 +26,15 @@
 }
 
 .alert.warning {
-  background-color: #584217;
+  background-color: #584217a1;
 }
 .alert.alert.warning span {
   color: #ffa600;
 }
 
 .alert.error {
-  background-color: #611f1f;
+  background-color: #6e2525af;
 }
 .alert.alert.error span {
-  color: #e20000;
+  color: #eb3838;
 }
