@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
-import "../src/index.css";
-
 import { themes } from "@storybook/theming";
+import "../src/index.css";
+import "./main.css";
 
 const preview: Preview = {
   parameters: {
@@ -13,6 +13,7 @@ const preview: Preview = {
     },
     docs: {
       theme: themes.dark,
+      autodocs: "tag",
     },
   },
 };
