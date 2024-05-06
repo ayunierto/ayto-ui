@@ -1,7 +1,7 @@
 button {
   /* min-width: 90px; */
   align-items: center;
-  border-radius: 4px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
   display: inline-flex;
@@ -16,9 +16,10 @@ button {
   user-select: none;
 }
 
+/* Sizes */
 button.small {
   font-size: 14px;
-  padding: 6px 12px;
+  padding: 6px 14px;
   min-height: auto;
   font-weight: 300;
 }
@@ -34,9 +35,11 @@ button.large {
   min-height: auto;
   font-weight: 800;
 }
+/* End Sizes */
+
 button.default {
   background-color: #ffffff10;
-  border-color: rgb(67, 53, 62);
+  border-color: rgb(78, 67, 74);
   color: #f3f3f3;
 }
 button.default:hover {
@@ -81,4 +84,25 @@ button.disabled {
 }
 button.disabled:hover {
   background-color: #ccc;
+}
+
+button.block {
+  width: 100%;
+}
+
+button.content__left {
+  justify-content: start;
+}
+
+.active button {
+  padding-left: 0;
+  background-color: #ffffff10;
+}
+
+.active button::before {
+  content: "";
+  width: 4px;
+  height: 20px;
+  background-color: rgb(219, 158, 229);
+  border-radius: 10px;
 }

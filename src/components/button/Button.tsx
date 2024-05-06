@@ -2,15 +2,15 @@ import "./Button.css";
 
 type Props = {
   /**
-   * Children to be rendered inside the button
+   * Children to be rendered inside the Button
    */
   children?: React.ReactNode;
   /**
-   * Additional classes to be added to the button
+   * Additional classes to be added to the Button
    */
   className?: string;
   /**
-   * Additional styles to be added to the button
+   * Additional styles to be added to the Button
    */
   style?: React.CSSProperties;
   /**
@@ -18,30 +18,38 @@ type Props = {
    */
   onClick?: () => void;
   /**
-   * Variant of the button
+   * Variant of the Button
    */
   variant?: "flat" | "solid" | "bordered";
   /**
-   * Color of the button
+   * Color of the Button
    */
   color?: "default" | "primary" | "success";
   /**
-   * Size of the button
+   * Size of the Button
    */
   size?: "small" | "medium" | "large";
   /**
-   * Disabled state of the button
+   * Disabled state of the Button
    */
   disabled?: boolean;
   /**
-   * Type of the button
+   * Type of the Button
    */
   type?: "button" | "submit" | "reset";
+  /**
+   * Add full width to the Button
+   */
+  block?: boolean;
+  /**
+   * Justify content to start
+   */
+  contentLeft?: boolean;
 };
 
 const Button = ({
   children,
-  className,
+  className = "",
   style,
   onClick,
   color = "default",
@@ -49,6 +57,8 @@ const Button = ({
   size = "medium",
   disabled,
   type,
+  block,
+  contentLeft,
   ...props
 }: Props) => {
   return (
@@ -56,7 +66,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       type={type}
-      className={`${color} ${variant} ${size} ${disabled ? "disabled" : ""} ${className}`}
+      className={`${color} ${variant} ${size} ${disabled ? "disabled" : ""} ${block ? "block" : ""} ${className} ${contentLeft ? "content__left" : ""}`}
       style={style}
       {...props}
     >

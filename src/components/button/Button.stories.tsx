@@ -3,6 +3,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
 import Icon from "../icon/Icon";
 
+/**
+ * An interactive button that allows users to perform a specific action in the application.
+ */
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
@@ -21,14 +24,17 @@ const meta: Meta<typeof Button> = {
       control: { type: "inline-radio" },
     },
     disabled: {
-      control: "boolean",
+      control: { type: "boolean" },
     },
     variant: {
       control: { type: "inline-radio" },
     },
-  },
-  parameters: {
-    // layout: "centered",
+    block: {
+      control: { type: "boolean" },
+    },
+    contentLeft: {
+      type: "boolean",
+    },
   },
 };
 
@@ -47,33 +53,51 @@ export const Default: Story = {
  */
 export const Variants: Story = {
   args: {},
-  render: () => (
+  render: (args) => (
     <div style={{ display: "flex", gap: "10px" }}>
-      <Button variant="flat">Button 1</Button>
-      <Button variant="solid">Button 2</Button>
-      <Button variant="bordered">Button 3</Button>
+      <Button {...args} variant="flat">
+        Button 1
+      </Button>
+      <Button {...args} variant="solid">
+        Button 2
+      </Button>
+      <Button {...args} variant="bordered">
+        Button 3
+      </Button>
     </div>
   ),
 };
 
 export const Colors: Story = {
   args: {},
-  render: () => (
+  render: (args) => (
     <div style={{ display: "flex", gap: "10px" }}>
-      <Button color="default">Button 1</Button>
-      <Button color="primary">Button 2</Button>
-      <Button color="success">Button 3</Button>
+      <Button {...args} color="default">
+        Button 1
+      </Button>
+      <Button {...args} color="primary">
+        Button 2
+      </Button>
+      <Button {...args} color="success">
+        Button 3
+      </Button>
     </div>
   ),
 };
 
 export const Sizes: Story = {
   args: {},
-  render: () => (
+  render: (args) => (
     <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-      <Button size="small">Button 1</Button>
-      <Button size="medium">Button 2</Button>
-      <Button size="large">Button 3</Button>
+      <Button {...args} size="small">
+        Button 1
+      </Button>
+      <Button {...args} size="medium">
+        Button 2
+      </Button>
+      <Button {...args} size="large">
+        Button 3
+      </Button>
     </div>
   ),
 };
