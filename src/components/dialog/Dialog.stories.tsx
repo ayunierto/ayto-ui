@@ -1,3 +1,4 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Dialog from "./Dialog";
@@ -16,6 +17,21 @@ const meta: Meta<typeof Dialog> = {
   title: "Components/Dialog",
   tags: ["autodocs"],
   component: Dialog,
+  // decorators: [
+  //   (Story) => (
+  //     <div style={{ height: "200px", overflow: "visible" }}>
+  //       <Story />
+  //     </div>
+  //   ),
+  // ],
+  argTypes: {
+    className: {
+      control: { type: "text" },
+    },
+    style: {
+      control: { type: "object" },
+    },
+  },
 };
 
 export default meta;
@@ -28,32 +44,38 @@ export const Default: Story = {
   },
   render: () => (
     <Dialog>
-      {({ open, close }) => (
-        <>
-          <DialogTrigger onClick={open}>
-            <Button>Open Dialog</Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>This is a title</DialogTitle>
-            </DialogHeader>
-            <DialogBody>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-                libero magnam saepe neque consectetur numquam.
-              </p>
-            </DialogBody>
-            <DialogFooter>
-              <Button onClick={close} variant="bordered">
-                Close
-              </Button>
-              <Button onClick={close} variant="solid" color="primary">
-                Confirm
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </>
-      )}
+      <DialogTrigger>
+        <Button>Open Dialog</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>This is a title</DialogTitle>
+          <DialogCloseButton>
+            <Icon icon="close" />
+          </DialogCloseButton>
+        </DialogHeader>
+        <DialogBody>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            libero magnam saepe neque consectetur numquam.
+          </p>
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            onClick={() => alert("Add a function to execute")}
+            variant="bordered"
+          >
+            Close
+          </Button>
+          <Button
+            onClick={() => alert("Add a function to execute")}
+            variant="solid"
+            color="primary"
+          >
+            Confirm
+          </Button>
+        </DialogFooter>
+      </DialogContent>
     </Dialog>
   ),
 };
@@ -64,35 +86,31 @@ export const OnlyInfo: Story = {
   },
   render: () => (
     <Dialog>
-      {({ open }) => (
-        <>
-          <DialogTrigger onClick={open}>
-            <Button>Open Dialog</Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Info</DialogTitle>
-              <DialogCloseButton>
-                <Icon icon="close" />
-              </DialogCloseButton>
-            </DialogHeader>
-            <DialogBody>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                vero quia eius esse pariatur impedit!
-              </p>
-            </DialogBody>
-          </DialogContent>
-        </>
-      )}
+      <DialogTrigger>
+        <Button>Open Dialog</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Info</DialogTitle>
+          <DialogCloseButton>
+            <Icon icon="close" />
+          </DialogCloseButton>
+        </DialogHeader>
+        <DialogBody>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            vero quia eius esse pariatur impedit!
+          </p>
+        </DialogBody>
+      </DialogContent>
     </Dialog>
   ),
 };
-
+/**
+ * Exposing all dialogue controls
+ */
 export const Full: Story = {
-  args: {
-    // The args you need here will depend on your component
-  },
+  args: {},
   render: () => (
     <Dialog>
       {({ open, close }) => (
@@ -114,7 +132,9 @@ export const Full: Story = {
               <Button onClick={close} variant="bordered">
                 Cancel
               </Button>
-              <Button color="primary">Confirm</Button>
+              <Button onClick={() => alert("Clicked")} color="primary">
+                Confirm
+              </Button>
             </DialogFooter>
           </DialogContent>
         </>

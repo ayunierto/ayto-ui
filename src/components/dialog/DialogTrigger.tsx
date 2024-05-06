@@ -1,14 +1,32 @@
+import React from "react";
+import { useContext } from "react";
+import "./Dialog.css";
+import { DialogContext } from "./Dialog";
+
 type Props = {
+  /**
+   * Children to render in the component
+   */
   children?: React.ReactNode;
+  /**
+   * Additional classes to be added
+   */
   className?: string;
+  /**
+   * Additional styles to be added
+   */
   style?: React.CSSProperties;
-  onClick: () => void;
+  /**
+   * Function to execute on click
+   */
+  onClick?: () => void;
 };
 
-const DialogTrigger = ({ children, className, style, onClick }: Props) => {
+const DialogTrigger = ({ children, className = "", style, onClick }: Props) => {
+  const { open } = useContext(DialogContext);
   return (
     <div
-      onClick={onClick}
+      onClick={onClick ? onClick : open}
       className={`${className}`}
       style={{ cursor: "pointer", ...style }}
     >

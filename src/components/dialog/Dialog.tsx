@@ -1,9 +1,19 @@
-import { CSSProperties, createContext, useState } from "react";
+import React from "react";
+import { CSSProperties, ReactNode, createContext, useState } from "react";
 import "./Dialog.css";
 
 type Props = {
-  children: (args: DialogContextProps) => JSX.Element;
+  /**
+   * Function that returns a JSX with the values to control the dialog
+   */
+  children: ((args: DialogContextProps) => JSX.Element) | ReactNode;
+  /**
+   * Additional classes to be added to the Dialog
+   */
   className?: string;
+  /**
+   * Additional styles to be added to the Dialog
+   */
   style?: CSSProperties;
 };
 
@@ -16,7 +26,7 @@ interface DialogContextProps {
 export const DialogContext = createContext({} as DialogContextProps);
 const { Provider } = DialogContext;
 
-const Dialog = ({ children, className, style }: Props) => {
+const Dialog = ({ children, className = "", style }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = () => setIsOpen(true);
@@ -25,7 +35,9 @@ const Dialog = ({ children, className, style }: Props) => {
   return (
     <Provider value={{ isOpen, open, close }}>
       <div className={`${className}`} style={style}>
-        {children({ isOpen, open, close })}
+        {typeof children === "function"
+          ? children({ isOpen, open, close })
+          : children}
       </div>
     </Provider>
   );

@@ -1,6 +1,9 @@
+import React from "react";
 import { useContext } from "react";
 import Button from "../button/Button";
 import { DialogContext } from "./Dialog";
+
+import "./Dialog.css";
 
 type Props = {
   children?: React.ReactNode;
@@ -8,7 +11,10 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-const DialogCloseButton = ({ children, className, style }: Props) => {
+/**
+ * Button for close Dialog
+ */
+const DialogCloseButton = ({ children, className = "", style }: Props) => {
   const { close } = useContext(DialogContext);
   return (
     <Button
