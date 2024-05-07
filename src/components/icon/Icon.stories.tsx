@@ -27,16 +27,31 @@ export const Default: Story = {
   },
 };
 
-export const Small: Story = {
+export const Sizes: Story = {
   args: {
-    size: "small",
     icon: "home",
   },
+  render: (args) => (
+    <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+      <Icon {...args} size="small" />
+      <Icon {...args} size="medium" />
+      <Icon {...args} size="large" />
+    </div>
+  ),
 };
 
-export const Large: Story = {
+export const Hoverable: Story = {
   args: {
     size: "large",
     icon: "home",
+    hoverable: true,
+  },
+};
+
+export const Clickable: Story = {
+  args: {
+    size: "large",
+    icon: "home",
+    onClick: () => alert("you clicked on me"),
   },
 };

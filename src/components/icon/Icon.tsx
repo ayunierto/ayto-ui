@@ -1,6 +1,12 @@
-import "./Icon.css";
+import React from "react";
+import styles from "./Icon.module.css";
 
 type Props = {
+  hoverable?: boolean;
+  /**
+   * Action to execute
+   */
+  onClick?: () => void;
   /**
    * Custom class name for the icon
    */
@@ -14,7 +20,7 @@ type Props = {
    */
   style?: React.CSSProperties;
   /**
-   * Available icons in https://marella.me/material-icons/demo/
+   * See icons in https://marella.me/material-symbols/demo/
    */
   icon:
     | "search"
@@ -3311,10 +3317,20 @@ type Props = {
     | "nest_gale_wifi";
 };
 
-const Icon = ({ className, style, icon, size = "medium" }: Props) => {
+const Icon = ({
+  className = "",
+  style,
+  icon,
+  size = "medium",
+  hoverable,
+  onClick,
+}: Props) => {
+  onClick || hoverable === true ? (hoverable = true) : (hoverable = false);
+
   return (
     <span
-      className={`material-icons-outlined ${size} ${className}`}
+      onClick={onClick}
+      className={`${styles.icon} material-symbols-outlined  ${styles[size]} ${hoverable ? styles.hoverable : ""} ${className}`}
       style={style}
     >
       {icon}
