@@ -23,9 +23,7 @@ const meta: Meta<typeof Button> = {
     type: {
       control: { type: "inline-radio" },
     },
-    disabled: {
-      control: { type: "boolean" },
-    },
+    disabled: { type: "boolean" },
     variant: {
       control: { type: "inline-radio" },
     },
@@ -35,6 +33,7 @@ const meta: Meta<typeof Button> = {
     contentLeft: {
       type: "boolean",
     },
+    onClick: { type: "function" },
   },
 };
 

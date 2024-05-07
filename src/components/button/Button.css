@@ -18,10 +18,10 @@ button {
 
 /* Sizes */
 button.small {
-  font-size: 14px;
+  font-size: 13px;
   padding: 6px 14px;
   min-height: auto;
-  font-weight: 300;
+  font-weight: 600;
 }
 button.medium {
   font-size: 14px;
@@ -79,11 +79,12 @@ button.bordered {
   color: #f3f3f3;
 }
 button.disabled {
-  background-color: #ccc;
+  background-color: #ffffff10;
   cursor: no-drop;
+  color: gray;
 }
 button.disabled:hover {
-  background-color: #ccc;
+  background-color: #ffffff10;
 }
 
 button.block {

@@ -57,7 +57,7 @@ const Button = ({
   variant = "solid",
   size = "medium",
   disabled,
-  type,
+  type = "button",
   block,
   contentLeft,
   ...props
