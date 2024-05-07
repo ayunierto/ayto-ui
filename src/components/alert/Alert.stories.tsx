@@ -92,7 +92,7 @@ export const WithButton: Story = {
   },
   render: (args) => (
     <Alert {...args} color="success">
-      <Icon icon="info" /> This is an alert with colors{" "}
+      <Icon icon="info" /> This is an alert with colors
       <Button size="small">Click me</Button>
     </Alert>
   ),
